@@ -93,6 +93,27 @@
                         @endif
                     @endguest
 
+                    @guest
+                    @else
+                        <input id="{{ $product->id }}" type="button" value="Добавить в корзину" onclick="add_to_cart();" class="btn btn-success btn-sm"/>
+                        <script>
+                            function add_to_cart() {
+
+                                let names = JSON.parse(localStorage.getItem('items'));
+                                if (names == null) {
+                                    names = [];
+                                }
+                                let entry = {
+                                    'name': 'item1'
+                                }
+                                localStorage.setItem('entry', JSON.stringify(entry));
+                                names.push(entry);
+                                localStorage.setItem('items', JSON.stringify(names));
+                                alert('Товар добавлен в корзину!');
+                                alert(JSON.stringify(names));
+                            }
+                        </script>
+                    @endguest
                 </td>
             </tr>
         @endforeach
