@@ -15,11 +15,16 @@
                     <img src="https://github.com/mdo.png" alt="mdo" class="rounded-circle" width="32" height="32">
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="#">Профиль</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Выйти</a></li>
+                    @guest
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Войти</a></li>
+                    @else
+                        <li><a class="dropdown-item" href="{{ route('login') }}">Войти</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Выйти</a></li>
+                    @endguest
+
                 </ul>
             </div>
         </div>
