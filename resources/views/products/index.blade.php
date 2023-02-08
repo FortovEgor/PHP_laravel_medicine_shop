@@ -38,7 +38,12 @@
             alert("aaaaaaaaa");
         }
     </script>
-    <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
+    @guest
+    @else
+        @if(auth()->user()->email=="egorfortov@gmail.com")
+            <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
+        @endif
+    @endguest
     <table class="table">
         <thead>
         <tr>
@@ -86,7 +91,7 @@
                                 <button class="btn btn-danger btn-sm">Удалить</button>
                             </form>
                         @endif
-                    @endif
+                    @endguest
 
                 </td>
             </tr>
