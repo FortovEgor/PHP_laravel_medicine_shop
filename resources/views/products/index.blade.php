@@ -42,7 +42,7 @@
                     </a>
                     @guest
                     @else
-                        @if(auth()->user()->email="egorfortov@gmail.com")
+                        @if(auth()->user()->email=="egorfortov@gmail.com")
 {{--                            <li class="nav-link px-2"> Вы администратор: можете удалить товары!</li>--}}
 
                             <a href="{{ route('products.edit', $product->id) }}">
@@ -51,11 +51,16 @@
                         @endif
                     @endguest
 
-                    <form method="POST" action="{{ route('products.destroy', $product->id) }}">
-                        @csrf
-                        @method("DELETE")
-                        <button class="btn btn-danger btn-sm">Удалить</button>
-                    </form>
+                    @guest
+                    @else
+                        @if(auth()->user()->email=="egorfortov@gmail.com")
+                            <form method="POST" action="{{ route('products.destroy', $product->id) }}">
+                                @csrf
+                                @method("DELETE")
+                                <button class="btn btn-danger btn-sm">Удалить</button>
+                            </form>
+                        @endif
+                    @endif
 
                 </td>
             </tr>
