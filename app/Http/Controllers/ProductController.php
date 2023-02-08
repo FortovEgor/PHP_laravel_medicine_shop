@@ -64,6 +64,7 @@ class ProductController extends Controller
 //        $user = User::find($product->user_id);  <-- эквивалентная запись
 //        $user = $product->user;  <-- эквивалентная запись
 //        return 'Product ' . $product->name;
+//        return 'Product';
 
         return view('products.show')
             ->with('product', $product);
