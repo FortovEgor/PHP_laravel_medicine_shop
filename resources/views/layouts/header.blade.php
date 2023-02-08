@@ -17,6 +17,13 @@
                     @endif
                 @endguest
 
+                <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
+                <script>
+                    function doFunction() {
+                        alert("Shoping cart is activated!");
+                    }
+                </script>
+
             </ul>
 
             <div class="dropdown text-end">

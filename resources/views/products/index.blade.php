@@ -33,6 +33,10 @@
                 }
             }
         }
+
+        function createShoppingCart() {
+            alert("aaaaaaaaa");
+        }
     </script>
     <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
     <table class="table">
@@ -88,5 +92,10 @@
             </tr>
         @endforeach
         </tbody>
+{{--        <tbody>--}}
+{{--        @foreach($users as $user)--}}
+{{--            <h3>{{ $user->name }}</h3>--}}
+{{--        @endforeach--}}
+{{--        </tbody>--}}
     </table>
 @endsection

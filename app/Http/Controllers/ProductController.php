@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,6 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+//        $users = User::all();
         return view('products.index')
             ->with('products', $products);
     }
@@ -28,6 +30,8 @@ class ProductController extends Controller
     {
         return view('products.create');
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -77,6 +81,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+//        return 'Product';
         return view('products.edit')
             ->with('product', $product);
     }

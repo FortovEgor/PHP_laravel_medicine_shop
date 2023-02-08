@@ -13,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->string('name');
-            $table->string('category');
-            $table->string('description')->nullable();
-            $table->float('price');
-            $table->string('href')->nullable();
+        Schema::table('products', function($table) {
+            $table->dropForeign('user_id');
+            $table->dropColumn('user_id');
         });
-
     }
 
     /**
@@ -30,8 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

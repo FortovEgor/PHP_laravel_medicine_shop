@@ -11,7 +11,6 @@
             <p>Категория: {{ $product->category }}</p>
             <p>Цена: {{ $product->price }}</p>
             <p>Описание: {{ $product->description }}</p>
-            <p>Автор товара: {{ $product->user->name }}</p>
             <img src="{{ $product->href }}" width="300" height="300">
 {{--            <p>Пользователь: {{ $product->user->name }}</p>--}}
 
