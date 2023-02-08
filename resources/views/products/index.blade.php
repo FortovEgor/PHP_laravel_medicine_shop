@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
 @section('title', 'Карточка товара')
 
@@ -26,9 +26,12 @@
                 <td><img src="{{ $product->href }}" height=120 width=120></td>
                 <td>{{ $product->price }}</td>
                 <td>
+{{--                    По--}}
+{{--                    @can('product.show')--}}
                     <a href="{{ route('products.show', $product->id) }}">
                         <button class="btn btn-primary btn-sm">Просмотреть</button>
                     </a>
+{{--                    @endcan--}}
                     <a href="{{ route('products.edit', $product->id) }}">
                         <button class="btn btn-info btn-sm">Изменить</button>
                     </a>

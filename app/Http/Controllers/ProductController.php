@@ -15,7 +15,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-
         return view('products.index')
             ->with('products', $products);
     }
@@ -91,8 +90,6 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-
-
 
         $validated = $request->validate([
             'name' => 'required|string|max:255',
