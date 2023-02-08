@@ -13,7 +13,28 @@
             border-radius: 30px; /* Скругляем уголки */
         }
     </style>
+    <?php
+//        session_start();
+        if (isset($_POST['Submit'])) {
+            $_SESSION['search_item'] = $_POST['search_item'];
+        } else {
+            $_SESSION['search_item'] = 'Введите название товара';
+        }
+        ?>
 {{--    <button class="btn btn-success" href="{{ route('products.create') }}">Создать товар</button>--}}
+    <form action="{{ route('products.index') }}" method="post">
+        @csrf
+        <input type="text" name="search_item" value="<?php echo $_SESSION['search_item'];?>" style="width: 500px;"/>
+        <input type="submit" name="Submit" value="Поиск" class="btn btn-primary"/>
+    </form>
+    <?php
+        session_start();
+        if (isset($_POST['Submit'])) {
+            $_SESSION['search_item'] = $_POST['search_item'];
+
+        }
+
+    ?>
     <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
     <table class="table">
         <thead>

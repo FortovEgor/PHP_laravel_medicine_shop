@@ -9,9 +9,12 @@
                 @endauth
                     <li><a href="{{ route('products.index') }}" class="nav-link px-2 link-dark">Товары</a></li>
                 @guest
+                    <li class="nav-link px-2"> Вы anonymous!</li>
                 @else
                     @if(auth()->user()->email=="egorfortov@gmail.com")
                         <li class="nav-link px-2"> Вы администратор: можете удалить товары!</li>
+                    @else
+                        <li class="nav-link px-2"> Вы зарегистрированный пользователь!</li>
                     @endif
                 @endguest
 
