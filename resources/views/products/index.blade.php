@@ -29,9 +29,17 @@
                     <a href="{{ route('products.show', $product->id) }}">
                         <button class="btn btn-primary btn-sm">Просмотреть</button>
                     </a>
-                    <a href="{{ route('products.edit', $product->id) }}">
-                        <button class="btn btn-info btn-sm">Изменить</button>
-                    </a>
+                    @guest
+                    @else
+                        @if(auth()->user()->email="egorfortov@gmail.com")
+{{--                            <li class="nav-link px-2"> Вы администратор: можете удалить товары!</li>--}}
+
+                            <a href="{{ route('products.edit', $product->id) }}">
+                                <button class="btn btn-info btn-sm">Изменить</button>
+                            </a>
+                        @endif
+                    @endguest
+
                     <form method="POST" action="{{ route('products.destroy', $product->id) }}">
                         @csrf
                         @method("DELETE")
