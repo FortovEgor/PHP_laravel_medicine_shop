@@ -3,11 +3,16 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-
                 <li><a href="#" class="nav-link px-2 link-secondary">Главная</a></li>
-                @auth
-                    <li><a href="{{ route('products.index') }}" class="nav-link px-2 link-dark">Товары</a></li>
-                @endauth
+{{--                @auth--}}
+{{--                    <li><a href="{{ route('products.index') }}" class="nav-link px-2 link-dark">Товары</a></li>--}}
+{{--                @endauth--}}
+{{--                @guest--}}
+{{--                @else--}}
+{{--                    @if(auth()->user()->email && auth()->user()->email="egorfortov@gmail.com")--}}
+{{--                        <li class="nav-link px-2"> Вы администратор: можете удалить товары!</li>--}}
+{{--                    @endif--}}
+{{--                @endguest--}}
 
             </ul>
 
@@ -28,7 +33,6 @@
                             @csrf
                             <button type="submit" class="dropdown-item">Выйти</button>
                         </form>
-
                     @endguest
 
                 </ul>
