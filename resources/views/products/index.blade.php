@@ -3,7 +3,18 @@
 @section('title', 'Карточка товара')
 
 @section('content')
-    <button class="btn btn-success">Создать товар</button>
+    <style>
+        .btn_special {
+            display: inline-block; /* Строчно-блочный элемент */
+            background: green; /* Серый цвет фона */
+            color: #fff; /* Белый цвет текста */
+            padding: 1rem 1.5rem; /* Поля вокруг текста */
+            text-decoration: none; /* Убираем подчёркивание */
+            border-radius: 30px; /* Скругляем уголки */
+        }
+    </style>
+{{--    <button class="btn btn-success" href="{{ route('products.create') }}">Создать товар</button>--}}
+    <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
     <table class="table">
         <thead>
         <tr>
