@@ -1,4 +1,4 @@
-{{--@extends('layouts.app')--}}
+@extends('layouts.app')
 
 @section('title', 'Карточка товара')
 
@@ -13,7 +13,7 @@
             border-radius: 30px; /* Скругляем уголки */
         }
     </style>
-    <?php
+
 {{--        if (isset($_GET['namee'])) {--}}
 {{--            echo '<script language="javascript">';--}}
 {{--            echo 'alert("message successfully sent")';--}}
@@ -43,7 +43,27 @@
 {{--        }--}}
 
 {{--    ?>--}}
+    <div><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Название товара" title="Type in a name" style="width: 500px; box-sizing: border-box;"></div>
+    <div style="padding: 10px"></div>
+    <script>
+        function myFunction() {
+            var input, filter, i, txtValue, tbody;
+            input = document.getElementById("myInput");  // +
+            filter = input.value.toUpperCase();  // +
 
+            tbody = document.getElementById("tbody");
+            tr = tbody.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                txtValue = tr[i].id;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
     <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
     <table class="table">
         <thead>
@@ -57,9 +77,9 @@
             <th scope="col">Действия</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
         @foreach($products as $product)
-            <tr>
+            <tr id="{{ $product->name }}">
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
                 <td>{{ $product->category }}</td>
