@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{--@extends('layouts.app')--}}
 
 @section('title', 'Карточка товара')
 
@@ -14,27 +14,36 @@
         }
     </style>
     <?php
-//        session_start();
-        if (isset($_POST['Submit'])) {
-            $_SESSION['search_item'] = $_POST['search_item'];
-        } else {
-            $_SESSION['search_item'] = 'Введите название товара';
-        }
-        ?>
+{{--        if (isset($_GET['namee'])) {--}}
+{{--            echo '<script language="javascript">';--}}
+{{--            echo 'alert("message successfully sent")';--}}
+{{--            echo '</script>';--}}
+{{--        } else {--}}
+{{----}}
+{{--        }--}}
+{{--        ?>--}}
+
 {{--    <button class="btn btn-success" href="{{ route('products.create') }}">Создать товар</button>--}}
-    <form action="{{ route('products.index') }}" method="post">
-        @csrf
-        <input type="text" name="search_item" value="<?php echo $_SESSION['search_item'];?>" style="width: 500px;"/>
-        <input type="submit" name="Submit" value="Поиск" class="btn btn-primary"/>
-    </form>
-    <?php
-        session_start();
-        if (isset($_POST['Submit'])) {
-            $_SESSION['search_item'] = $_POST['search_item'];
 
-        }
+{{--    <form name="form" action="{{ route('products.index') }}" method="post">--}}
+{{--        @csrf--}}
+{{--        <input type="text" name="search_item" value="<?php echo $_COOKIE['search_item'];?>" style="width: 500px;"/>--}}
+{{--        <input type="submit" name="Submit" value="Поиск" class="btn btn-primary"/>--}}
+{{--    </form>--}}
+{{--    <?php--}}
 
-    ?>
+{{--        if (isset($_POST['Submit'])) {--}}
+{{--            echo '<script language="javascript">';--}}
+{{--            echo 'alert("message successfully sent")';--}}
+{{--            echo '</script>';--}}
+{{--            $_COOKIE['search_item'] = 'askskms';--}}
+{{--//            setcookie('search_item', 'dm skks', time() + 24 * 3600);  // срок действия - сутки--}}
+{{--        } else {--}}
+
+{{--        }--}}
+
+{{--    ?>--}}
+
     <a href="{{ route('products.create') }}" class="btn_special">Создать товар</a>
     <table class="table">
         <thead>
