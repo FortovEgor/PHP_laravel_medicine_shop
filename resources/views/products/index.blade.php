@@ -13,36 +13,6 @@
             border-radius: 30px; /* Скругляем уголки */
         }
     </style>
-
-{{--        if (isset($_GET['namee'])) {--}}
-{{--            echo '<script language="javascript">';--}}
-{{--            echo 'alert("message successfully sent")';--}}
-{{--            echo '</script>';--}}
-{{--        } else {--}}
-{{----}}
-{{--        }--}}
-{{--        ?>--}}
-
-{{--    <button class="btn btn-success" href="{{ route('products.create') }}">Создать товар</button>--}}
-
-{{--    <form name="form" action="{{ route('products.index') }}" method="post">--}}
-{{--        @csrf--}}
-{{--        <input type="text" name="search_item" value="<?php echo $_COOKIE['search_item'];?>" style="width: 500px;"/>--}}
-{{--        <input type="submit" name="Submit" value="Поиск" class="btn btn-primary"/>--}}
-{{--    </form>--}}
-{{--    <?php--}}
-
-{{--        if (isset($_POST['Submit'])) {--}}
-{{--            echo '<script language="javascript">';--}}
-{{--            echo 'alert("message successfully sent")';--}}
-{{--            echo '</script>';--}}
-{{--            $_COOKIE['search_item'] = 'askskms';--}}
-{{--//            setcookie('search_item', 'dm skks', time() + 24 * 3600);  // срок действия - сутки--}}
-{{--        } else {--}}
-
-{{--        }--}}
-
-{{--    ?>--}}
     <div><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Название товара" title="Type in a name" style="width: 500px; box-sizing: border-box;"></div>
     <div style="padding: 10px"></div>
     <script>
