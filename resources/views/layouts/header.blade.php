@@ -17,12 +17,14 @@
                     @endif
                 @endguest
 
-                <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
+                <input id="clickMe" type="button" value="Очистить корзину товаров" onclick="doFunction();" class="btn btn-danger btn-sm" style="margin-right: 10px"/>
                 <script>
                     function doFunction() {
+                        localStorage.clear();
                         alert("Shoping cart is activated!");
                     }
                 </script>
+                <input id="aaa" type="button" value="Показать корзину товаров" onclick="doFunction();" class="btn btn-info btn-sm"/>
 
             </ul>
 

@@ -9,7 +9,7 @@
             background: green; /* Серый цвет фона */
             color: #fff; /* Белый цвет текста */
             padding: 1rem 1.5rem; /* Поля вокруг текста */
-            text-decoration: none; /* Убираем подчёркивание */
+            text-decoration: none; /* Убираем подчёркиваие */
             border-radius: 30px; /* Скругляем уголки */
         }
     </style>
@@ -95,16 +95,16 @@
 
                     @guest
                     @else
-                        <input id="{{ $product->id }}" type="button" value="Добавить в корзину" onclick="add_to_cart();" class="btn btn-success btn-sm"/>
+                        <input id="{{ $product->id }}" type="button" value="Добавить в корзину" onclick="add_to_cart({{ $product->id }});" class="btn btn-success btn-sm"/>
                         <script>
-                            function add_to_cart() {
+                            function add_to_cart(id_of_item, name_of_item) {
 
                                 let names = JSON.parse(localStorage.getItem('items'));
                                 if (names == null) {
                                     names = [];
                                 }
                                 let entry = {
-                                    'name': 'item1'
+                                    name_of_item: id_of_item
                                 }
                                 localStorage.setItem('entry', JSON.stringify(entry));
                                 names.push(entry);
