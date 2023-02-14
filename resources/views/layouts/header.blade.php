@@ -17,14 +17,24 @@
                     @endif
                 @endguest
 
-                <input id="clickMe" type="button" value="Очистить корзину товаров" onclick="doFunction();" class="btn btn-danger btn-sm" style="margin-right: 10px"/>
+                <input id="clickMe" type="button" value="Очистить корзину товаров" onclick="clearCart();" class="btn btn-danger btn-sm" style="margin-right: 10px"/>
                 <script>
-                    function doFunction() {
+                    function clearCart() {
                         localStorage.clear();
-                        alert("Shoping cart is activated!");
+                        alert("Корзина товаров очищена!");
+                    }
+
+                    function showCart() {
+                        let names = JSON.parse(localStorage.getItem('items'));
+                        alert(JSON.stringify(names));
+                    }
+
+                    function sendOrder() {
+                        alert("Заказ отправлен в магазин!")
                     }
                 </script>
-                <input id="aaa" type="button" value="Показать корзину товаров" onclick="doFunction();" class="btn btn-info btn-sm"/>
+                <input id="aaa" type="button" value="Показать корзину товаров" onclick="showCart();" class="btn btn-info btn-sm" style="margin-right: 10px"/>
+                <input id="aaa" type="button" value="Отправить заказ в магазин" onclick="sendOrder();" class="btn btn-primary btn-sm"/>
 
             </ul>
 
